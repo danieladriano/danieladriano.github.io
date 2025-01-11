@@ -1,0 +1,45 @@
+baseURL = 'https://danieladriano.github.io/'
+languageCode = 'en-us'
+title = 'Daniel Adriano'
+theme = 'gokarna'
+defaultContentLanguage = "en"
+# Automatically generate robots.txt
+enableRobotsTXT = true
+
+[params]
+  accentColor = "#FF4D4D"
+  # Resource URL for the site avatar (home page and header)
+  avatarURL = "/daniel.webp"
+  
+  # Describe the avatar for screen readers
+  avatarAltText = "avatar"
+
+  # Set the avatar's size: size-xs, size-s, size-m, size-l & size-xl
+  avatarSize = "size-xl"
+
+  # description = "Sky above, sand below & peace within"
+  footer = "Daniel Adriano"
+  showBackToTopButton = true # true or false for "back to top" button on posts and pages
+
+  fontSize = "17.5px"
+
+  socialIcons = [
+    {name = "linkedin", url = "https://www.linkedin.com/in/daniel-domingos-adriano-6a8b3266/"},
+    {name = "github", url = "https://github.com/danieladriano"},
+    {name = "email", url = "mailto:daniel.dadriano@gmail.com"}
+  ]
+
+  showPostsOnHomePage = "recent"
+
+[menu]
+  [[menu.main]]
+    name = "Home"
+    pre = "<span data-feather='home'></span>"
+    url = "/"
+    weight = 1
+
+  [[menu.main]]
+    name = "Posts"
+    pre = "<span data-feather='book'></span>"
+    url = "/posts/"
+    weight = 2
