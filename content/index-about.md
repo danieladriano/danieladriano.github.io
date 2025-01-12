@@ -1,0 +1,1 @@
+I’m a passionate machine learning engineer with a background in software development, computer vision, and data-driven solutions. Beyond the code, I enjoy mentoring, sharing knowledge, and collaborating with teams to create new solutions. Welcome to my blog, where I will try to share insights from my journey!
