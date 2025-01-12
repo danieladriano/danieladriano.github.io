@@ -6,6 +6,10 @@ defaultContentLanguage = "en"
 # Automatically generate robots.txt
 enableRobotsTXT = true
 
+[services]
+  [services.googleAnalytics]
+    ID = "G-WJ1M8KWFHX"
+
 [params]
   accentColor = "#FF4D4D"
   # Resource URL for the site avatar (home page and header)
@@ -30,6 +34,18 @@ enableRobotsTXT = true
   ]
 
   showPostsOnHomePage = "recent"
+
+  customHeadHTML = '''
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WJ1M8KWFHX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-WJ1M8KWFHX');
+    </script>
+  '''
 
 [menu]
   [[menu.main]]
