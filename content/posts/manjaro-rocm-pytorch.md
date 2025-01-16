@@ -1,5 +1,5 @@
 ---
-date: 2025-01-08
+date: 2025-01-16
 # description: ""
 # image: ""
 lastmod: 2025-01-08
@@ -128,3 +128,5 @@ You can now download some models, load them, and test them.
 # Conclusion
 
 Completing these steps will allow you to set up your AMD GPU for machine learning and related tasks using ROCm. This open-source platform provides the tools and libraries to utilize your hardware in various computational workflows effectively.
+
+Thanks for reading :)
