@@ -5,7 +5,7 @@ date: 2025-01-16
 lastmod: 2025-01-08
 showTableOfContents: false
 # tags: ["",]
-title: "Manjaro + ROCm + PyTorch"
+title: "Manjaro + ROCm + PyTorch + LMStudio + Ollama"
 type: "post"
 ---
 
@@ -124,6 +124,39 @@ To verify if LMStudio detected your AMD GPU, go to App Settings/System Resources
 You can now download some models, load them, and test them. 
 
 ![lmstudio-chat](/rocm_pytorch/chat.png "LM Studio Chat")
+
+# Using ollama
+
+To use ollama 0.5.7, install as specified in the [Ollama documentation](https://github.com/ollama/ollama/blob/main/docs/linux.md#install).
+
+```
+curl -fsSL https://ollama.com/install.sh | sh
+```
+
+Now you can run models locally by executing the command below. To see all models available, go to [Ollama models](https://ollama.com/search).
+
+
+```
+ollama run llama3.2
+```
+
+Sometimes, the model is not loaded at the GPU. In my case, it was necessary to set the `HSA_OVERRIDE_GFX_VERSION` variable in Ollama settings. This variable is used to manually specify the HSA and GFX versions for GPU operations.
+
+```
+nvim /etc/systemd/system/ollama.service
+```
+
+Set the variable
+
+```
+Environment="HSA_OVERRIDE_GFX_VERSION=10.3.0"
+```
+
+Restart Ollama service
+
+```
+sudo systemctl daemon-reload && sudo systemctl restart ollama.service
+```
 
 # Conclusion
 
