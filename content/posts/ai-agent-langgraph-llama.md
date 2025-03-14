@@ -5,7 +5,7 @@ date: 2025-03-14
 lastmod: 2025-03-14
 showTableOfContents: false
 # tags: ["",]
-title: "Creating a AI Agent with LangGraph and Llama 3.1"
+title: "Creating an AI Agent with LangGraph and Llama 3.1"
 type: "post"
 ---
 In this post, we will create an Agent responsible for handling restaurant reservations. This agent uses a local Llama 3.1 LLM model with tool call capabilities and is built using [LangGraph](https://langchain-ai.github.io/langgraph/).
