@@ -349,6 +349,6 @@ Sometimes, the LLM can create an answer with more information than necessary. Fo
 
 ## The conclusion and next steps
 
-With the latest advances in LLM, AI Agents are getting more power and capabilities. In this simple example, we create a node that calls a local Llama 3.1 model with tool call capabilities to handle user requests.
+With the latest advances in LLM, AI Agents are getting more power and capabilities. In this simple example, we create a node that calls a local Llama 3.1 model with tool call capabilities to handle user requests. The complete code is available in my [GitHub account](https://github.com/danieladriano/single-agent).
 In the following steps, we will create a multi-agent chatbot and add memory.
 If you have any doubts, you can reach me through LinkedIn. Thanks for reading 😀
