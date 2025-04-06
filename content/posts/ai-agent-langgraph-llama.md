@@ -22,7 +22,7 @@ Key Features of LangGraph:
 
 ## The start
 
-To start, we need to run the Llama 3.1 LLM model locally. I will use [Ollama](https://ollama.com/) for this project. D[ownload](https://ollama.com/download) Ollama from the official site to install it. Check out my previous post if you use an AMD card and want to configure Ollama with ROCm.
+To start, we need to run the Llama 3.1 LLM model locally. I will use [Ollama](https://ollama.com/) for this project. [Download](https://ollama.com/download) Ollama from the official site to install it. Check out my previous post if you use an AMD card and want to configure Ollama with ROCm.
 
 Due to GPU memory limitations, I will use Llama 3.1 with 8 billion parameters. To pull the model from Ollama:
 
