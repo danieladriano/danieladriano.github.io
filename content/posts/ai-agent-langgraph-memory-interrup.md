@@ -1,7 +1,7 @@
 ---
 date: 2025-04-06
 # description: ""
-# image: ""
+image: "/ai-agent-memory-hil/output_image.png"
 lastmod: 2025-04-06
 showTableOfContents: false
 # tags: ["",]
