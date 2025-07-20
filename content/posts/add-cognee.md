@@ -1,7 +1,7 @@
 ---
 date: 2025-07-20
 # description: ""
-image: "/ai-agent-memory-hil/output_image.png"
+image: "/cognee-graph-memory/graph.png"
 date: 2025-07-20
 showTableOfContents: false
 # tags: ["",]
