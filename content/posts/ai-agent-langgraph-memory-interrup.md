@@ -69,11 +69,11 @@ class Agent:
 
 ```
 
-Full Agent Class - https://github.com/danieladriano/car-dealership-agents/blob/main/agent.py
+Full Agent Class - https://github.com/danieladriano/car-dealership-agents/blob/short-term-memory/agent.py
 
 ## The Human-in-the-loop - user confirmation using interrup
 
-Human-in-the-loop (HIL) interactions are essential when working with agent systems. Sometimes, we need to confirm information or wait for human input. In LangGraph, we can use the `interrupt()` function to interact with the user in the middle of our graph execution. 
+Human-in-the-loop (HIL) interactions are essential when working with agent systems. Sometimes, we need to confirm information or wait for human input. In LangGraph, we can use the `interrupt()` function to interact with the user in the middle of our graph execution.
 
 To add `interruptions` in our agents, it's necessary that our graph is being built using a checkpointer. Luckily for us, we already did that 🙂
 
@@ -117,7 +117,7 @@ def cancel_test_drive(code: int) -> bool:
  ...
 ```
 
-Full test_drive module - https://github.com/danieladriano/car-dealership-agents/blob/main/tools/test_drive.py
+Full test_drive module - https://github.com/danieladriano/car-dealership-agents/blob/short-term-memory/tools/test_drive.py
 
 Now, we need to create a node responsible for confirming with the user if he wants to cancel and then call the `cancel_test_drive` method at `tools/test_drive.py` . In this node, we get the `tool_call["args"]` that the LLM returned, then create a `CancelTestDrive` BaseModel. Then, we call the `interrupt` passing a custom message. This will break the graph execution, returning this message to the user. After the user answers, the graph will resume executing from this node. One heads up is that when the graph resumes his execution, the entire node will be executed again, including the code before the `interrupt`. With the `user_answer` , we verify if he confirmed the cancel operation and then call the `cancel_test_drive` function. Finally, return a `ToolMessage` with the content according to the user confirmation and with the same `tool_call_id` as the `tool_call` from the LLM. This is necessary because every `tool_call` needs a `ToolMessage` as a result.
 
@@ -220,7 +220,7 @@ def stream_graph_updates(
 
     return events["messages"][-1].content
 ```
-Full main module - https://github.com/danieladriano/car-dealership-agents/blob/main/main.py
+Full main module - https://github.com/danieladriano/car-dealership-agents/tree/short-term-memory/main.py
 
 ## The results
 
@@ -252,7 +252,7 @@ any other necessary details such as your name and driver’s license number.
 
 ```
 
-Then, we inform the car, name, driver's license, and date. At this moment, the LLM calls the `schedule_test_drive` tool, but since the car args are wrong (it’s necessary to have all [Car fields](https://github.com/danieladriano/car-dealership-agents/blob/main/store/dealership_store.py#L33)), the LLM keeps trying until it passes the correct arguments. We can see that it calls the `schedule_test_drive` tool four times and also one time the `list_inventory` to have more context about the available cars. 
+Then, we inform the car, name, driver's license, and date. At this moment, the LLM calls the `schedule_test_drive` tool, but since the car args are wrong (it’s necessary to have all [Car fields](https://github.com/danieladriano/car-dealership-agents/blob/main/store/dealership_store.py#L33)), the LLM keeps trying until it passes the correct arguments. We can see that it calls the `schedule_test_drive` tool four times and also one time the `list_inventory` to have more context about the available cars.
 
 ```
 INFO:ai-chat:User: Great. I want to schedule a test drive for the 2025 black one.
@@ -396,6 +396,6 @@ INFO:ai-chat:===================================================================
 
 ## The conclusion
 
-In this post, we create an Agent who helps a car dealership handle listing/searching cars and test driving. We added a short-term memory in the graph, allowing memory between chats in the same thread and also interrupting the graph execution to talk with the user. You can get the entire project code at my [GitHub](https://github.com/danieladriano/car-dealership-agents/tree/main).
+In this post, we create an Agent who helps a car dealership handle listing/searching cars and test driving. We added a short-term memory in the graph, allowing memory between chats in the same thread and also interrupting the graph execution to talk with the user. You can get the entire project code at my [GitHub](https://github.com/danieladriano/car-dealership-agents/tree/short-term-memory).
 
 If you have any doubts, you can reach me through LinkedIn. Thanks for reading 😀
