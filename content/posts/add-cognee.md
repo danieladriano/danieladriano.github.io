@@ -5,7 +5,7 @@ image: "/ai-agent-memory-hil/output_image.png"
 date: 2025-07-20
 showTableOfContents: false
 # tags: ["",]
-title: "Using Cognee to add graph memory to our agent"
+title: "How to Give Your AI Agent a Knowledge Graph Memory with Cognee"
 type: "post"
 ---
 In this post, we'll explore how to significantly upgrade our car dealership agent's ability to answer specific questions about car models. While a standard Retrieval-Augmented Generation (RAG) approach is effective for finding relevant documents, it can struggle with queries that require understanding the relationships between different data points—for instance, connecting a specific engine type to its horsepower and then to the car models that use it.
